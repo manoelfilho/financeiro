@@ -1,0 +1,54 @@
+<main class="main-content" role="main">
+<section id="usuario" class="section">
+	<!-- .wrapper -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<?php echo $this->partial('partials/menu_admin.phtml'); ?> 
+				</div>
+				<div class="col-md-9">
+					<p><a href="/admin/movimentacao/cadastrar" class="btn btn-primary">Nova débito ou crédito</a></p>
+					<h2>Movimentações</h2>
+					<p>Lorem ipsum</p>
+					<br />
+					<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+				 	<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+				 	<?php echo $this->flashMessenger()->render('warning', array('alert', 'alert-warning')); ?>
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Conta</th>
+								<th>Categoria</th>
+								<th>Data</th>
+								<th>Valor</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($movimentacoes as $movimentacao): ?>
+							<tr>
+								<td><a href="/admin/movimentacao/editar/<?php echo $movimentacao->id; ?>"><span
+										title="Editar movimentação" alt="Editar movimentação"
+										class="glyphicon glyphicon-pencil"></span></a></td>
+							
+								<td><?php echo $movimentacao->conta->getConta(); ?></td>
+								<td><?php echo $movimentacao->categoria->getCategoria(); ?></td>
+								<td><?php echo $movimentacao->data->format('d/m/Y') ?></td>
+								<td><?php echo $movimentacao->valor; ?></td>
+							
+								<td><a onclick="return confirm('Confirma a remoção desta movimentação?');" href="/admin/movimentacao/excluir/<?php echo $movimentacao->id; ?>"><span
+										title="Excluir movimentação" alt="Excluir movimentação"
+										class="glyphicon glyphicon-remove"></span></a></td>
+							</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+					<?php echo $this->paginationControl($movimentacoes, 'Sliding', 'partials/paginator.phtml'); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</main>

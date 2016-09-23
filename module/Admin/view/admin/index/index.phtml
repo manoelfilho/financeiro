@@ -1,0 +1,64 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<?php foreach ($contas as $conta): ?>
+
+  <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Categoria', 'Gasto (R$)'],
+            
+            <?php 
+              foreach ( $conta['somas'] as $soma ):
+                echo "['" .$soma['categoria']. "', " .$soma['soma']."],"; 
+              endforeach; 
+            ?>
+
+          ]);
+
+          var options = {
+            title: 'Gastos por categorias',
+            vAxis: {title: 'Categoria',  titleTextStyle: {color: 'red'}}
+          };
+
+          var chart = new google.visualization.BarChart(document.getElementById('<?php echo 'div_'.$conta['conta']; ?>'));
+
+          chart.draw(data, options);
+        }
+  </script>
+
+<?php endforeach; ?>
+
+<main class="main-content" role="main">
+<section id="usuario" class="section">
+	<!-- .wrapper -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<?php echo $this->partial('partials/menu_admin.phtml'); ?>   
+				</div>
+				<div class="col-md-9">
+					<h2>Informações gerais sobre as contas cadastradas</h2>
+					<p>Cada gráfico exibe um resumo de gastos de acordo com as categorias cadastradas no sistema</p>
+					<br />
+
+          <?php foreach ($contas as $conta): ?>
+
+  					<h4>Conta <?php echo $conta['conta'].' - '.$conta['banco']; ?></h4>
+
+  					<div class="chart"> 
+             <div id="<?php echo 'div_'.$conta['conta']; ?>"></div>
+  					</div>
+
+          <?php endforeach; ?>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</section>
+</main>

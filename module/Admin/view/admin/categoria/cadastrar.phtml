@@ -1,0 +1,25 @@
+
+<main class="main-content" role="main">
+<section id="usuario" class="section">
+	<!-- .wrapper -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<?php echo $this->partial('partials/menu_admin.phtml'); ?>
+				</div>
+				<div class="col-md-9">
+					<h2>Cadastrar categoria</h2>
+					<p>Lorem ipsum</p>
+					<br />
+					<?php
+					echo $this->form ()->openTag ( $form );
+					echo $this->formCollection ( $form );
+					echo $this->form ()->closeTag ();
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</main>

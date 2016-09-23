@@ -1,0 +1,42 @@
+<?php echo $this->partial('partials/header_pages.phtml'); ?>
+<main class="main-content" role="main">
+	<section id="usuario" class="section">
+		<!-- .wrapper -->
+		<div class="wrapper">
+			<header>
+				<h1>Redefinir senha</h1>
+				<p>Digite uma nova senha</p>
+			</header>
+				<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+				<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+				
+				<form class="form-horizontal" role="form" id="redefinirsenha"
+					name="redefinirsenha" action="mudarsenha" method="post">
+					<input type="hidden" name="codVerificacao" value="<?php echo $hash; ?>">
+					<div class="form-group">
+						<label for="inputSenha" class="col-sm-4 control-label">Nova senha</label>
+						<div class="col-sm-8">
+							<input maxlength="6" name="senha" type="password"
+								class="form-control" id="inputSenha" placeholder="Senha">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputConfirmacaoSenha" class="col-sm-4 control-label">Informe
+							a senha novamente</label>
+						<div class="col-sm-8">
+							<input maxlength="6" name="confirmacaosenha" type="password"
+								class="form-control" id=inputConfirmacaoSenha
+								placeholder="Informe a senha novamente">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-4">
+							<button type="submit" class="btn btn-default">Redefinir senha</button>
+						</div>
+						<div class="col-sm-8"></div>
+					</div>
+				</form>
+		</div>
+	</section>
+</main>
+

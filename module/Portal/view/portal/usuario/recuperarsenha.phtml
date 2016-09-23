@@ -1,0 +1,31 @@
+<?php echo $this->partial('partials/header_pages.phtml'); ?>
+<main class="main-content" role="main">
+	<section id="usuario" class="section">
+		<!-- .wrapper -->
+		<div class="wrapper">
+			<header>
+				<h1>Recuperar senha</h1>
+				<p>Digite seu endereço eletrônico para rededefinir sua senha. Uma mensagem será encaminhada para o seu endereço com as instruções de redefinição de senha.</p>
+			</header>
+	            <?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+				<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+				<br/>
+				<form class="form-horizontal" role="form" id="recuperarsenha"
+					name="recuperarsenha" action="recuperarsenha" method="post">
+					<div class="form-group">
+						<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-6">
+							<input name="email" type="email" class="form-control"
+								id="inputEmail" placeholder="Email">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-primary">Recuper senha</button>
+						</div>
+					</div>
+				</form>
+	
+		</div>
+	</section>
+</main>

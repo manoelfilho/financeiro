@@ -1,0 +1,30 @@
+<?php if($contato) { ?>
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+				</button>
+				<h2 class="modal-title">Atenção</h2>
+			</div>
+			<div class="modal-body">
+				<h3>Este endereço eletrônico já está cadastrado na base de dados. Se você é cadastrado e não sabe a senha, clique no botão abaixo</h3>
+			</div>
+			<div class="modal-footer">
+				<a href="recuperarsenha" class="btn btn-primary">Recuperar
+					senha</a>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () {
+	$('.modal').modal('show')   
+});
+//]]>
+</script>
+<?php } ?>

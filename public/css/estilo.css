@@ -1,0 +1,26 @@
+#usuario {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+#usuario header h1 {
+	text-align: left;
+}
+#usuario input, #usuario select {
+	margin-bottom: 15px;
+}
+#usuario #submitbutton{
+	margin-top: 15px;
+}
+#usuario .icheckbox_square-red {
+	margin-right: 10px;
+}
+
+.alert li {
+	list-style-type: none;
+}
+p .btn.btn-primary,  p .btn.btn-success, p .btn.btn-info, p .btn.btn-warning, p .btn.btn-danger {
+	color: #FFF;
+}
+.chart{
+	width: 100%;
+}

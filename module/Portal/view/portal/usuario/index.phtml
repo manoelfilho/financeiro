@@ -1,0 +1,33 @@
+<?php echo $this->partial('partials/header_pages.phtml'); ?>
+<main class="main-content" role="main">
+<section id="usuario" class="section">
+	<!-- .wrapper -->
+	<div class="wrapper">
+		<header>
+			<h1>Login</h1>
+			<p>Digite seu email e senha para acessar suas contas</p>
+			<div class="alert alert-info">
+				<p><strong>Para fazer testes:</strong>
+				<br/>email: usuario@email.com
+				<br/>senha: 123456
+
+				</p>
+			</div>
+		</header>
+
+		<div class="row">
+			<div class="col-md-6">    
+	              <?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+				  <?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+	
+				  <?php
+						echo $this->form ()->openTag ( $form );
+						echo $this->formCollection ( $form );
+						echo $this->form ()->closeTag ();
+						?>
+					<p><a href="usuario/recuperarsenha">Recuperar senha</a> <a href="usuario/cadastrar">Fazer cadastro</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+</main>

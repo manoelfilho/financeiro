@@ -1,0 +1,49 @@
+<main class="main-content" role="main">
+<section id="usuario" class="section">
+	<!-- .wrapper -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<?php echo $this->partial('partials/menu_admin.phtml'); ?> 
+				</div>
+				<div class="col-md-9">
+					<p><a href="/admin/conta/cadastrar" class="btn btn-primary">Nova conta</a></p>
+					<h2>Contas</h2>
+					<p>Lorem ipsum</p>
+					<br />
+					<?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?>
+				 	<?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?>
+				 	<?php echo $this->flashMessenger()->render('warning', array('alert', 'alert-warning')); ?>
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Banco</th>
+								<th>Conta</th>
+								<th>Saldo</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($contas as $conta): ?>
+							<tr>
+								<td><a href="/admin/conta/editar/<?php echo $conta->id; ?>"><span
+										title="Editar conta" alt="Editar conta"
+										class="glyphicon glyphicon-pencil"></span></a></td>
+								<td><?php echo $conta->banco; ?></td>
+								<td><?php echo $conta->conta; ?></td>
+								<td><?php echo $conta->saldo; ?></td>
+								<td><a onclick="return confirm('Confirma a remoção desta conta?');" href="/admin/conta/excluir/<?php echo $conta->id; ?>"><span
+										title="Excluir conta" alt="Excluir conta"
+										class="glyphicon glyphicon-remove"></span></a></td>
+							</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</main>

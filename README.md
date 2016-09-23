@@ -1,0 +1,1 @@
+Projeto de exemplo usando o Doctrine 2 e o Zend Framework 2. Consiste em simples exemplos de crud usando o ORM e o MVC do ZF2.

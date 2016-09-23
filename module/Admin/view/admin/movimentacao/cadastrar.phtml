@@ -1,0 +1,25 @@
+<main class="main-content" role="main">
+<section id="usuario" class="section">
+	<!-- .wrapper -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<?php echo $this->partial('partials/menu_admin.phtml'); ?>
+				</div>
+				<div class="col-md-9">
+					<h2>Cadastrar débito/crédito</h2>
+					<p><?php echo $this->flashMessenger()->render('error', array('alert', 'alert-danger')); ?></p>
+					<p><?php echo $this->flashMessenger()->render('success', array('alert', 'alert-success')); ?></p>
+					<br />
+					<?php
+					echo $this->form ()->openTag ( $form );
+					echo $this->formCollection ( $form );
+					echo $this->form ()->closeTag ();
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</main>

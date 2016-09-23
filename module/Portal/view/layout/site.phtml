@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="pt-BR">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="pt-BR">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) ]><!-->
+<html lang="pt-BR">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Financeiro</title>
+<meta name="description"
+	content="Projeto de conclusão de pós-graduação - Modelo de Sistema Financeiro" />
+<meta name="keywords" content="Sistema financeiro" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    
+    <?php $url = $_SERVER['SERVER_NAME']; ?>	
+	<?php
+		echo $this->headLink ( 
+			array (
+					'rel' => 'shortcut icon',
+					'href' => '/images/icon-web-design.png' 
+				) )->appendStylesheet ( 'http://' . $url . '/css/bootstrap.min.css' )
+		  		   ->appendStylesheet ( 'http://' . $url . '/css/magnific-popup.css' )
+				   ->appendStylesheet ( 'http://' . $url . '/css/screen-green.css' )
+				   ->appendStylesheet ( 'http://' . $url . '/css/estilo.css' )
+				   ->appendStylesheet ( 'http://' . $url . '/lib/icheck-master/skins/square/red.css' );
+	?>		
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<?php 
+		
+		$this->headScript()->appendFile('http://'.$url.'/js/jquery.min.js')
+						   ->appendFile('http://'.$url.'/lib/validation/jquery.validate.min.js')
+						   ->appendFile('http://'.$url.'/lib/tooltip_validation.js')
+						   ->appendFile('http://'.$url.'/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9'))
+						   ->appendFile('http://'.$url.'/js/respond.js', 'text/javascript', array('conditional' => 'lt IE 9'))
+						   ->appendFile('http://'.$url.'/js/retina.min.js')
+						   ->appendFile('http://'.$url.'/js/bootstrap.min.js')
+						   ->appendFile('http://'.$url.'/js/isotope.min.js')
+						   ->appendFile('http://'.$url.'/js/magnific.popup.min.js')
+						   ->appendFile('http://'.$url.'/js/imagesloaded.js')
+						   ->appendFile('http://'.$url.'/js/main.js')
+						   ->appendFile('http://'.$url.'/lib/icheck-master/icheck.min.js')
+						   ->appendFile('http://'.$url.'/js/portal_usuario_cadastro.js');
+		
+		echo $this->headScript();
+	?>  
+</head>
+<body>
+	<?php echo $this->content; ?>
+	<?php echo $this->partial('partials/footer.phtml'); ?> 
+</body>
+</html>
+
