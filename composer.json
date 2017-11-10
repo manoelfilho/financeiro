@@ -1,4 +1,5 @@
 {
+
     "name": "zendframework/skeleton-application",
     "description": "Skeleton Application for ZF2",
     "license": "BSD-3-Clause",
@@ -13,4 +14,5 @@
         "zendframework/zendframework": "2.5.2",
         "doctrine/doctrine-orm-module":"dev-master"
     }
+
 }
